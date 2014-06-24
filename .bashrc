@@ -109,6 +109,88 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ssh connexions
+# Add scripts
+export PATH=/home/tim/Work/Scripts:$PATH
+
+# Add sublime text
+export PATH=/home/tim/Work/Soft/Sublime2/:$PATH
+
+# Added by Canopy installer on 2014-02-14
+# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
+alias canpy='VIRTUAL_ENV_DISABLE_PROMPT=1 source /home/tim/Enthought/Canopy_64bit/User/bin/activate'
+
+# added by Anaconda 1.8.0 installer
+alias ancda='export OLD_PATH=$PATH export PATH="/home/tim/anaconda/bin:$PATH"'
+alias uancda='export PATH=$OLD_PATH'
+
+# external geodesic library
+export PYTHONPATH=/home/tim/Work/Models/python/TVB/external_geodesic_library
+
+# for matlab
+export LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64:$ld_library_path
+export xapplresdir=/usr/local/matlab/matlab_compiler_runtime/v80/x11/app-defaults:$xapplresdir
+
+# for fsl
+FSLDIR=/usr/share/fsl/5.0/
+. ${FSLDIR}/etc/fslconf/fsl.sh
+path=${FSLDIR}/bin:${path}
+export FSLDIR path
+
+# for anywave
+export path=/usr/local/anywave/:${path}
+
+# for freesurfer
+export SUBJECTS_DIR=/disk3/Work/Processed_data/freesurfer
+export FREESURFER_HOME=/usr/local/freesurfer
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+
+# for camino
+export MANPATH=/home/tim/camino/man:$MANPATH
+export PATH=/home/tim/camino/bin:$PATH
+
+# for trackvis and dtk
+export DTDIR="/home/tim/dtk"
+export DSI_PATH="/home/tim/dtk/matrices"
+export PATH="${DTDIR}:${PATH}"
+
+# mrtrix
+export PATH=/opt/mrtrix/bin/:$PATH
+
+# for brightness
+alias bgt1='xrandr --output DVI-I-1 --brightness 0.1'
+alias bgt2='xrandr --output DVI-I-1 --brightness 0.2'
+alias bgt3='xrandr --output DVI-I-1 --brightness 0.3'
+alias bgt4='xrandr --output DVI-I-1 --brightness 0.4'
+alias bgt5='xrandr --output DVI-I-1 --brightness 0.5'
+alias bgt6='xrandr --output DVI-I-1 --brightness 0.6'
+alias bgt7='xrandr --output DVI-I-1 --brightness 0.7'
+alias bgt8='xrandr --output DVI-I-1 --brightness 0.8'
+alias bgt9='xrandr --output DVI-I-1 --brightness 0.9'
+alias bgt0='xrandr --output DVI-I-1 --brightness 1.0'
+alias bgg1='xrandr --output DP-1 --brightness 0.1'
+alias bgg2='xrandr --output DP-1 --brightness 0.2'
+alias bgg3='xrandr --output DP-1 --brightness 0.3'
+alias bgg4='xrandr --output DP-1 --brightness 0.4'
+alias bgg5='xrandr --output DP-1 --brightness 0.5'
+alias bgg6='xrandr --output DP-1 --brightness 0.6'
+alias bgg7='xrandr --output DP-1 --brightness 0.7'
+alias bgg8='xrandr --output DP-1 --brightness 0.8'
+alias bgg9='xrandr --output DP-1 --brightness 0.9'
+alias bgg0='xrandr --output DP-1 --brightness 1.0'
+
+# alias cluster
 alias cl='ssh -Y tim@139.124.148.56'
 
+# alias anatomist
+alias anatomist='/home/tim/Work/Soft/brainvisa-4.3.0/anatomist'
+
+# alias matlab
+alias matlab='/home/tim/Matlab/bin/matlab -nodesktop'
+
+# alias shorcuts
+alias pro='cd /disk3/Work/Processed_data'
+alias dat='cd /disk2/Work/DATA'
+alias sim='cd /disk2/Work/Simulations'
+alias mod='cd /home/tim/Work/Models'
+alias hcp='cd /disk3/Work/Processed_data/HCP/100307/'
+alias freem="sync; su -c 'echo 3 > /proc/sys/vm/drop_caches'"
