@@ -5,7 +5,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 "" for easy installation
-filetype off
+"filetype off
 execute pathogen#infect()
 call pathogen#infect()
 call pathogen#helptags()
@@ -24,7 +24,7 @@ noremap <Right> <NOP>
 
 """ line numbers
 set number
-set colorcolumn=80
+"set colorcolumn=80
 highlight ColorColumn ctermbg=223
 
 """ for ctrl-p vim
@@ -41,3 +41,8 @@ set t_Co=256
 let g:molokai_original = 1
 let g:rehash256 = 1
 let g:pymode = 0
+
+""" to send enter for tslime/python
+map <C-c><C-c> "ry :call Send_to_Tmux(@r . "\n\n")<CR>
+map ù mtvip"ry :call Send_to_Tmux(@r . "\n\n")<CR>
+

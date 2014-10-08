@@ -120,7 +120,7 @@ export PATH=/home/tim/Work/Soft/Sublime2/:$PATH
 alias canpy='VIRTUAL_ENV_DISABLE_PROMPT=1 source /home/tim/Enthought/Canopy_64bit/User/bin/activate'
 
 # added by Anaconda 1.8.0 installer
-alias ancda='export OLD_PATH=$PATH export PATH="/home/tim/anaconda/bin:$PATH"'
+alias ancda='export OLD_PATH=$PATH export PATH="/home/tim/anaconda/bin:$PATH"; export QT_API=pyqt'
 alias uancda='export PATH=$OLD_PATH'
 
 # external geodesic library
@@ -137,7 +137,7 @@ path=${FSLDIR}/bin:${path}
 export FSLDIR path
 
 # for anywave
-export path=/usr/local/anywave/:${path}
+#export path=/usr/local/anywave/:${path}
 
 # for freesurfer
 export SUBJECTS_DIR=/disk3/Work/Processed_data/freesurfer
@@ -194,3 +194,5 @@ alias sim='cd /disk2/Work/Simulations'
 alias mod='cd /home/tim/Work/Models'
 alias hcp='cd /disk3/Work/Processed_data/HCP/100307/'
 alias freem="sync; su -c 'echo 3 > /proc/sys/vm/drop_caches'"
+alias tvb='cd /home/tim/Work/Models/python/TVB/'
+alias tsci='cd /home/tim/Work/Models/python/TVB/trunk/scientific_library/tvb/simulator'
