@@ -1,6 +1,6 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/tim/.vim'
-let g:netrw_dirhist_2='/home/tim/.config/ipython/profile_default'
-let g:netrw_dirhist_3='/home/tim/Work/Models/python/1_SNIC_epi'
-let g:netrw_dirhist_4='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_1='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_2='/home/tim/Work/Models/processing/scripts/right_region_mapping'
+let g:netrw_dirhist_3='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_4='/home/tim/Work/Models/processing/scripts/utility'

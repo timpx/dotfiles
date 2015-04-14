@@ -109,15 +109,23 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# pc_name if pc id is needed in if cases
+pc_name=$(cat /etc/hostname)
+
 # Add scripts
 export PATH=/home/tim/Work/Scripts:$PATH
 
-# Add sublime text
-export PATH=/home/tim/Work/Soft/Sublime2/:$PATH
+# use python for anki
+export PATH=/usr/bin/:$PATH
 
-# Added by Canopy installer on 2014-02-14
-# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-alias canpy='VIRTUAL_ENV_DISABLE_PROMPT=1 source /home/tim/Enthought/Canopy_64bit/User/bin/activate'
+# Add sublime text work
+if [ $pc_name == "tym" ]; then
+export PATH=/home/tim/Work/Soft/Sublime2/:$PATH;
+fi
+# sublime_text home
+if [ $pc_name == "timmy" ]; then
+export PATH=$PATH:/home/tim/Work/Soft/Sublime\ Text\ 2/;
+fi
 
 # added by Anaconda 1.8.0 installer
 alias ancda='export OLD_PATH=$PATH export PATH="/home/tim/anaconda/bin:$PATH"; export QT_API=pyqt'
@@ -139,22 +147,47 @@ export FSLDIR path
 # for anywave
 #export path=/usr/local/anywave/:${path}
 
+# qmake
+alias qmake=/usr/local/pkg/qt/4.8.5/bin/qmake
+
 # for freesurfer
-export SUBJECTS_DIR=/disk3/Work/Processed_data/freesurfer
-export FREESURFER_HOME=/usr/local/freesurfer
-source $FREESURFER_HOME/SetUpFreeSurfer.sh
+if [ $pc_name == "tym" ]; then
+export SUBJECTS_DIR=/disk3/Work/Processed_data/freesurfer;
+export FREESURFER_HOME=/usr/local/freesurfer;
+source $FREESURFER_HOME/SetUpFreeSurfer.sh;
+fi
+if [ $pc_name == "timmy" ]; then
+export SUBJECTS_DIR=/home/tim/Work/Processed_data/freesurfer;
+export FREESURFER_HOME=/home/tim/Work/Soft/freesurfer/;
+source $FREESURFER_HOME/SetUpFreeSurfer.sh;
+fi
 
 # for camino
 export MANPATH=/home/tim/camino/man:$MANPATH
 export PATH=/home/tim/camino/bin:$PATH
+
+# camino to trackvis
+export CAMINO2TRK=/home/tim/camino-trackvis-0.2.8.1
 
 # for trackvis and dtk
 export DTDIR="/home/tim/dtk"
 export DSI_PATH="/home/tim/dtk/matrices"
 export PATH="${DTDIR}:${PATH}"
 
-# mrtrix
-export PATH=/opt/mrtrix/bin/:$PATH
+# dsi_studio
+export DSI_STUDIO_FA_TEMPLATE=/usr/local/pkg/dsi_studio/20120919/NTU90_QA.nii.gz
+alias dsistudio=/usr/local/pkg/dsistudio/20120919/dsi_studio
+
+
+# mrtrix_work
+if [ $pc_name == "tym" ]; then
+export PATH=/opt/mrtrix/bin/:$PATH;
+fi
+# mrtrix_home
+if [ $pc_name == "timmy" ]; then
+#export PATH=/usr/lib/mrtrix/bin/:$PATH;
+export PATH=/home/tim/Work/Soft/mrtrix3/bin:$PATH
+fi
 
 # for brightness
 alias bgt1='xrandr --output DVI-I-1 --brightness 0.1'
@@ -177,6 +210,18 @@ alias bgg7='xrandr --output DP-1 --brightness 0.7'
 alias bgg8='xrandr --output DP-1 --brightness 0.8'
 alias bgg9='xrandr --output DP-1 --brightness 0.9'
 alias bgg0='xrandr --output DP-1 --brightness 1.0'
+# for brightness home
+alias bgu1='xrandr --output DVI-I-2 --brightness 0.1'
+alias bgu2='xrandr --output DVI-I-2 --brightness 0.2'
+alias bgu3='xrandr --output DVI-I-2 --brightness 0.3'
+alias bgu4='xrandr --output DVI-I-2 --brightness 0.4'
+alias bgu5='xrandr --output DVI-I-2 --brightness 0.5'
+alias bgu6='xrandr --output DVI-I-2 --brightness 0.6'
+alias bgu7='xrandr --output DVI-I-2 --brightness 0.7'
+alias bgu8='xrandr --output DVI-I-2 --brightness 0.8'
+alias bgu9='xrandr --output DVI-I-2 --brightness 0.9'
+alias bgu0='xrandr --output DVI-I-2 --brightness 1.0'
+
 
 # alias cluster
 alias cl='ssh -Y tim@139.124.148.56'
@@ -184,8 +229,18 @@ alias cl='ssh -Y tim@139.124.148.56'
 # alias anatomist
 alias anatomist='/home/tim/Work/Soft/brainvisa-4.3.0/anatomist'
 
-# alias matlab
-alias matlab='/home/tim/Matlab/bin/matlab -nodesktop'
+# alias matlab work
+if [ $pc_name == "tym" ]; then
+alias matlab='/home/tim/Matlab/bin/matlab -nodesktop';
+fi
+# matlab home
+if [ $pc_name == "timmy" ]; then
+alias matlab=/usr/local/MATLAB/R2013a/bin/matlab;
+fi
+
+
+# cd TVB
+alias TVB='cd /home/tim/Work/Models/python/TVB/'
 
 # alias shorcuts
 alias pro='cd /disk3/Work/Processed_data'
@@ -196,3 +251,7 @@ alias hcp='cd /disk3/Work/Processed_data/HCP/100307/'
 alias freem="sync; su -c 'echo 3 > /proc/sys/vm/drop_caches'"
 alias tvb='cd /home/tim/Work/Models/python/TVB/'
 alias tsci='cd /home/tim/Work/Models/python/TVB/trunk/scientific_library/tvb/simulator'
+
+# for kile
+#export KDEDIRS=$HOME/kile-install:$KDEDIRS
+#$HOME/kile-install/bin/kile
