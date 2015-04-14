@@ -127,17 +127,17 @@ alias uancda='export PATH=$OLD_PATH'
 export PYTHONPATH=/home/tim/Work/Models/python/TVB/external_geodesic_library
 
 # for matlab
-export LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64:$ld_library_path
-export xapplresdir=/usr/local/matlab/matlab_compiler_runtime/v80/x11/app-defaults:$xapplresdir
+export LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/MATLAB/Matlab_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/MATLAB/Matlab_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64:$LD_LIBRARY_PATH
+export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/X11/app-defaults:$XAPPLRESDIR
 
 # for fsl
 FSLDIR=/usr/share/fsl/5.0/
 . ${FSLDIR}/etc/fslconf/fsl.sh
-path=${FSLDIR}/bin:${path}
-export FSLDIR path
+PATH=${FSLDIR}/bin:${PATH}
+export FSLDIR PATH 
 
 # for anywave
-#export path=/usr/local/anywave/:${path}
+export PATH=/home/tim/Work/Soft/Anywave/AnyWave/:${PATH}
 
 # for freesurfer
 export SUBJECTS_DIR=/disk3/Work/Processed_data/freesurfer
@@ -154,7 +154,16 @@ export DSI_PATH="/home/tim/dtk/matrices"
 export PATH="${DTDIR}:${PATH}"
 
 # mrtrix
-export PATH=/opt/mrtrix/bin/:$PATH
+# export PATH=/opt/mrtrix/bin/:$PATH
+# mrtrix3
+export QMAKESPEC=/usr/share/qt4/mkspecs/linux-g++/
+export PATH=$PATH:/usr/share/qt4/bin/
+export PATH=/home/tim/Work/Soft/mrtrix3/bin/:$PATH
+export PATH=/home/tim/Work/Soft/mrtrix3/scripts/:$PATH
+
+# mne
+export MNE_ROOT=/home/tim/Work/Soft/MNE-2.7.3-3268-Linux-x86_64
+source $MNE_ROOT/bin/mne_setup_sh
 
 # for brightness
 alias bgt1='xrandr --output DVI-I-1 --brightness 0.1'
@@ -186,6 +195,8 @@ alias anatomist='/home/tim/Work/Soft/brainvisa-4.3.0/anatomist'
 
 # alias matlab
 alias matlab='/home/tim/Matlab/bin/matlab -nodesktop'
+#export PATH='/home/tim/Matlab/bin/':$PATH
+
 
 # alias shorcuts
 alias pro='cd /disk3/Work/Processed_data'
@@ -196,3 +207,6 @@ alias hcp='cd /disk3/Work/Processed_data/HCP/100307/'
 alias freem="sync; su -c 'echo 3 > /proc/sys/vm/drop_caches'"
 alias tvb='cd /home/tim/Work/Models/python/TVB/'
 alias tsci='cd /home/tim/Work/Models/python/TVB/trunk/scientific_library/tvb/simulator'
+
+# alias display
+alias fj='ancda; export DISPLAY=:0;ipython --pylab'

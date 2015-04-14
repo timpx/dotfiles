@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/tim/.vim'
-let g:netrw_dirhist_2='/home/tim/.config/ipython/profile_default'
-let g:netrw_dirhist_3='/home/tim/Work/Models/python/1_SNIC_epi'
-let g:netrw_dirhist_4='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_2='/home/tim/Work/Models/processing/scripts/right_region_mapping'
+let g:netrw_dirhist_3='/home/tim/Work/Models/processing/scripts/subparcel'
+let g:netrw_dirhist_4='/disk3/Work/Processed_data/HCP/101107'
+let g:netrw_dirhist_5='/disk3/Work/Processed_data/HCP'
+let g:netrw_dirhist_6='/disk3/Work/Processed_data/HCP/125525'
+let g:netrw_dirhist_7='/home/tim/Work/Models/processing/scripts/remesher/cmdremesher'
+let g:netrw_dirhist_8='/disk3/Work/Processed_data/HCP/100307/connectivity/tracts-ascii'
+let g:netrw_dirhist_9='/mnt'
