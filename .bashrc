@@ -118,14 +118,26 @@ export PATH=/home/tim/Work/Scripts:$PATH
 # use python for anki
 export PATH=/usr/bin/:$PATH
 
+alias pycan='export PATH=/home/tim/Canopy_environment/User/bin:$PATH'
+alias upycan='export PATH=/usr/bin/:$PATH'
+
+
 # Add sublime text work
-if [ $pc_name == "tym" ]; then
+if [ $pc_name == "work" ]; then
 export PATH=/home/tim/Work/Soft/Sublime2/:$PATH;
 fi
 # sublime_text home
-if [ $pc_name == "timmy" ]; then
+if [ $pc_name == "home" ]; then
 export PATH=$PATH:/home/tim/Work/Soft/Sublime\ Text\ 2/;
 fi
+
+# bug in canopy, change xterm 
+export TERM="xterm-256color"
+
+# python path for canopy
+# export PYTHONPATH=/home/tim/Canopy_user/User/lib/python2.7/site-packages
+#export PYTHONPATH=/home/tim/Canopy/appdata/canopy-1.1.0.1371.rh5-x86_64/lib/python2.7/site-packages:$PATH
+
 
 # added by Anaconda 1.8.0 installer
 alias ancda='export OLD_PATH=$PATH export PATH="/home/tim/anaconda/bin:$PATH"; export QT_API=pyqt'
@@ -135,17 +147,20 @@ alias uancda='export PATH=$OLD_PATH'
 export PYTHONPATH=/home/tim/Work/Models/python/TVB/external_geodesic_library
 
 # for matlab
-export LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/matlab/matlab_compiler_runtime/v80/sys/java/jre/glnxa64/jre/lib/amd64:$ld_library_path
-export xapplresdir=/usr/local/matlab/matlab_compiler_runtime/v80/x11/app-defaults:$xapplresdir
+export LD_LIBRARY_PATH=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/bin/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v80/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/usr/local/MATLAB/Matlab_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64/server:/usr/local/MATLAB/Matlab_Compiler_Runtime/v81/sys/java/jre/glnxa64/jre/lib/amd64:$LD_LIBRARY_PATH
+export XAPPLRESDIR=/usr/local/MATLAB/MATLAB_Compiler_Runtime/v81/X11/app-defaults:$XAPPLRESDIR
 
 # for fsl
 FSLDIR=/usr/share/fsl/5.0/
 . ${FSLDIR}/etc/fslconf/fsl.sh
-path=${FSLDIR}/bin:${path}
-export FSLDIR path
+PATH=${FSLDIR}/bin:${PATH}
+export FSLDIR PATH 
 
 # for anywave
-#export path=/usr/local/anywave/:${path}
+export PATH=/home/tim/Work/Soft/Anywave/AnyWave/:${PATH}
+
+# qmake
+alias qmake=/usr/local/pkg/qt/4.8.5/bin/qmake
 
 # qmake
 alias qmake=/usr/local/pkg/qt/4.8.5/bin/qmake
@@ -173,6 +188,16 @@ export CAMINO2TRK=/home/tim/camino-trackvis-0.2.8.1
 export DTDIR="/home/tim/dtk"
 export DSI_PATH="/home/tim/dtk/matrices"
 export PATH="${DTDIR}:${PATH}"
+
+# mrtrix3 compilation
+export QMAKESPEC=/usr/share/qt4/mkspecs/linux-g++/
+export PATH=$PATH:/usr/share/qt4/bin/
+export PATH=/home/tim/Work/Soft/mrtrix3/bin/:$PATH
+export PATH=/home/tim/Work/Soft/mrtrix3/scripts/:$PATH
+
+# mne
+export MNE_ROOT=/home/tim/Work/Soft/MNE-2.7.3-3268-Linux-x86_64
+source $MNE_ROOT/bin/mne_setup_sh
 
 # dsi_studio
 export DSI_STUDIO_FA_TEMPLATE=/usr/local/pkg/dsi_studio/20120919/NTU90_QA.nii.gz
@@ -222,7 +247,6 @@ alias bgu8='xrandr --output DVI-I-2 --brightness 0.8'
 alias bgu9='xrandr --output DVI-I-2 --brightness 0.9'
 alias bgu0='xrandr --output DVI-I-2 --brightness 1.0'
 
-
 # alias cluster
 alias cl='ssh -Y tim@139.124.148.56'
 
@@ -230,11 +254,11 @@ alias cl='ssh -Y tim@139.124.148.56'
 alias anatomist='/home/tim/Work/Soft/brainvisa-4.3.0/anatomist'
 
 # alias matlab work
-if [ $pc_name == "tym" ]; then
+if [ $pc_name == "work" ]; then
 alias matlab='/home/tim/Matlab/bin/matlab -nodesktop';
 fi
 # matlab home
-if [ $pc_name == "timmy" ]; then
+if [ $pc_name == "home" ]; then
 alias matlab=/usr/local/MATLAB/R2013a/bin/matlab;
 fi
 
@@ -255,3 +279,6 @@ alias tsci='cd /home/tim/Work/Models/python/TVB/trunk/scientific_library/tvb/sim
 # for kile
 #export KDEDIRS=$HOME/kile-install:$KDEDIRS
 #$HOME/kile-install/bin/kile
+
+# alias display
+alias fj='ancda; export DISPLAY=:0;ipython --pylab'
