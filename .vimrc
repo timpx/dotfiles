@@ -46,3 +46,9 @@ let g:pymode = 0
 map <C-c><C-c> "ry :call Send_to_Tmux(@r . "\n\n")<CR>
 map ù mtvip"ry :call Send_to_Tmux(@r . "\n\n")<CR>
 
+""" for atp
+let b:atp_updatetime_insert = 1
+let b:atp_updatetime_normal = 1
+let g:atp_IMAPCC = 1
+let g:atp_tab_map = 1
+nmap gq m`vipgq`` 
